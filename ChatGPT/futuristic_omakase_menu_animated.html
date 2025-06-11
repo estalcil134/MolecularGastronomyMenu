@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ichi-Go Ichi-E | µCuisine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&family=Crimson+Text&family=Noto+Serif+SC&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sky-blue: #a2d6f9;
+      --deep-navy: #0a0e2a;
+      --metallic-gold: #e0b253;
+      --lavender: #d3a4f9;
+      --panel: rgba(10, 14, 42, 0.8);
+      --font-primary: 'Rajdhani', sans-serif;
+      --font-secondary: 'Crimson Text', serif;
+    }
+
+    * {
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      font-family: var(--font-secondary);
+      background: linear-gradient(to bottom, var(--deep-navy), #1a1f3d);
+      color: var(--sky-blue);
+      background-attachment: fixed;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .background-wires {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .wire {
+      position: absolute;
+      width: 1px;
+      height: 100vh;
+      background: linear-gradient(to bottom, transparent, #a2d6f9, transparent);
+      animation: traceMove 4s linear infinite;
+      opacity: 0.25;
+    }
+
+    @keyframes traceMove {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sigil {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1rem auto;
+    }
+
+    .sigil svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .outer-circle, .middle-circle, .inner-hex {
+      fill: none;
+    }
+
+    .outer-circle {
+      stroke: var(--metallic-gold);
+      stroke-dasharray: 6 4;
+      stroke-width: 2;
+      animation: rotateClockwise 4s linear infinite;
+      transform-origin: center;
+    }
+
+    .middle-circle {
+      stroke: url(#skyblueGold);
+      stroke-dasharray: 6 4;
+      stroke-width: 2;
+      animation: rotateCounter 6s linear infinite;
+      transform-origin: center;
+    }
+
+    .inner-hex {
+      stroke: url(#hexGradient);
+      stroke-width: 2;
+      animation: rotateClockwiseSlow 10s linear infinite;
+      transform-origin: center;
+    }
+
+    @keyframes rotateClockwise {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotateCounter {
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+
+    @keyframes rotateClockwiseSlow {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .sigil-text {
+      font-family: 'Noto Serif SC', serif;
+      fill: var(--lavender);
+      font-size: 16px;
+      dominant-baseline: middle;
+      text-anchor: middle;
+    }
+
+    h1 {
+      font-family: var(--font-primary);
+      font-size: 2.7rem;
+      color: var(--metallic-gold);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--sky-blue);
+      font-style: italic;
+    }
+
+    .menu {
+      max-width: 700px;
+      margin: 0 auto;
+      border-radius: 16px;
+      padding: 1rem 1.5rem;
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(162, 214, 249, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .course {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--sky-blue);
+    }
+
+    .course:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      font-family: var(--font-primary);
+      font-size: 0.8rem;
+      color: var(--metallic-gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--sky-blue);
+      margin-top: 0.25rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: #cde6f5;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background-wires" id="wires"></div>
+  <header>
+    <div class="sigil">
+      <svg viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="skyblueGold" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#a2d6f9" />
+            <stop offset="100%" stop-color="#e0b253" />
+          </linearGradient>
+          <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#a2d6f9" />
+            <stop offset="100%" stop-color="#d3a4f9" />
+          </linearGradient>
+        </defs>
+        <circle class="outer-circle" cx="50" cy="50" r="48" />
+        <circle class="middle-circle" cx="50" cy="50" r="34" />
+        <polygon class="inner-hex" points="50,30 66,40 66,60 50,70 34,60 34,40" />
+        <text x="50" y="50" class="sigil-text">吃</text>
+      </svg>
+    </div>
+    <h1>Ichi-Go Ichi-E</h1>
+    <div class="subtitle">µCuisine | A Singular Omakase of the Future</div>
+  </header>
+  <main class="menu" id="menu">
+    <div class="course">
+      <div class="label">Awakening</div>
+      <div class="title">Scallop-Salmon Rose Grid</div>
+      <div class="description">Precision-cut sashimi melded with enzyme, molded into a rose. Accented by uni quantum sauce and piquant chili oil.</div>
+    </div>
+    <div class="course">
+      <div class="label">Terra Uplink</div>
+      <div class="title">Chocolate Fungal Soil</div>
+      <div class="description">Spiced mushroom and cocoa earth with root vegetables and glazed pearl onion. A bite of hyper-naturality.</div>
+    </div>
+    <div class="course">
+      <div class="label">Kinetic Crunch</div>
+      <div class="title">Hedgehog Belly</div>
+      <div class="description">Pork belly in fractal fry with Thai foam and garlic-mayo gel. A neural thrill of texture and intensity.</div>
+    </div>
+    <div class="course">
+      <div class="label">Taste Calibration</div>
+      <div class="title">Artichoke Core Roulade</div>
+      <div class="description">Spinach-artichoke stuffed chicken with flavor-modulating properties. Prepares for sweet data input.</div>
+    </div>
+    <div class="course">
+      <div class="label">Sequence Drift</div>
+      <div class="title">Yuzu Shigureni Overlay</div>
+      <div class="description">Shaved beef over umami-encoded cheese rice. Spiced by yuzu OS patch.</div>
+    </div>
+    <div class="course">
+      <div class="label">Rebalance</div>
+      <div class="title">Quattro Cheese Protocol</div>
+      <div class="description">Cheesy bread with dip duality: chili aioli and green pesto. A carb sync phase.</div>
+    </div>
+    <div class="course">
+      <div class="label">Final Layer</div>
+      <div class="title">Egg Simulation Sphere</div>
+      <div class="description">Black sesame tuile with coconut espuma and passion-mango yolk. Served with toasted milk matrix and tropical cordial.</div>
+    </div>
+  </main>
+  <script>
+    // Generate background wires
+    const wireContainer = document.getElementById('wires');
+    const numWires = 20; // Reduced density to 25%
+    for (let i = 0; i < numWires; i++) {
+      const wire = document.createElement('div');
+      wire.classList.add('wire');
+      wire.style.left = `${Math.random() * 100}vw`;
+      wire.style.animationDelay = `${Math.random() * 5}s`;
+      wireContainer.appendChild(wire);
+    }
+  </script>
+</body>
+</html>

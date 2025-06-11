@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salt & Mercury | Arcana Gastronomica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Crimson+Text&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --midnight: #1f1a24;
+      --gold: #d4af37;
+      --silver: #c0c0c0;
+      --parchment: #f9f5e3;
+      --ink: #333;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(to bottom, var(--midnight), var(--ink));
+      color: var(--parchment);
+      font-family: 'Crimson Text', serif;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Alchemical_Symbols.svg/1200px-Alchemical_Symbols.svg.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-attachment: fixed;
+      backdrop-filter: blur(4px);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.7rem;
+      color: var(--gold);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--silver);
+      font-style: italic;
+    }
+
+    .menu {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: rgba(249, 245, 227, 0.1);
+      border-radius: 10px;
+      border: 1px solid var(--gold);
+      padding: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .course {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--silver);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideIn 1s ease-out forwards;
+    }
+
+    .course:nth-child(1) { animation-delay: 0.3s; }
+    .course:nth-child(2) { animation-delay: 0.6s; }
+    .course:nth-child(3) { animation-delay: 0.9s; }
+    .course:nth-child(4) { animation-delay: 1.2s; }
+    .course:nth-child(5) { animation-delay: 1.5s; }
+    .course:nth-child(6) { animation-delay: 1.8s; }
+    .course:nth-child(7) { animation-delay: 2.1s; }
+
+    .course:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--parchment);
+      margin-top: 0.25rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: var(--silver);
+      margin-top: 0.25rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+        background-size: 400px;
+      }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Salt & Mercury</h1>
+    <div class="subtitle">Arcana Gastronomica — A Molecular Alchemist’s Table</div>
+  </header>
+  <main class="menu">
+    <div class="course">
+      <div class="label">Transmutation</div>
+      <div class="title">Scallop & Salmon Rose</div>
+      <div class="description">A checkerboard of sea and silk, bound by enzyme and shaped to bloom. Crowned with uni elixir and aetherial chili oil.</div>
+    </div>
+    <div class="course">
+      <div class="label">Prima Materia</div>
+      <div class="title">Earthen Cradle</div>
+      <div class="description">A soil of bitter cocoa and spiced fungi encasing roots of flame-roasted potato, beet, carrot, and glazed pearls.</div>
+    </div>
+    <div class="course">
+      <div class="label">Combustion</div>
+      <div class="title">Pork Hedgehog</div>
+      <div class="description">Crisped belly, splayed and seared, with Thai-spiced foam and herbed garlic lard. A phoenix in crackling repose.</div>
+    </div>
+    <div class="course">
+      <div class="label">Purification</div>
+      <div class="title">Spinach-Artichoke Roulade</div>
+      <div class="description">Rolled chicken with molten cheese, sweet-blocking artichoke, and forest greens. Served before the rebirth of taste.</div>
+    </div>
+    <div class="course">
+      <div class="label">Conjunction</div>
+      <div class="title">Yuzu Shigureni</div>
+      <div class="description">Velvety beef, slow-simmered with alchemical balance over cheese-enriched rice. Brightened with citrus secrets.</div>
+    </div>
+    <div class="course">
+      <div class="label">Fixation</div>
+      <div class="title">Bread of the Four Flames</div>
+      <div class="description">Molten cheese loaf with duality sauces: chili and basil. To ground and prepare the vessel for final transformation.</div>
+    </div>
+    <div class="course">
+      <div class="label">Philosopher's Stone</div>
+      <div class="title">Tropical Fried Egg Illusion</div>
+      <div class="description">Espuma of coconut vanilla, mango-passion yolk sphere, sesame tuile base, and milk bread. Paired with a luminous cordial.</div>
+    </div>
+  </main>
+</body>
+</html>

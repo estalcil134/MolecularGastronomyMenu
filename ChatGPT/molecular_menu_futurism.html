@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>µCuisine | Phase 7</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-neon: #00e5ff;
+      --deep-gray: #111;
+      --surface: #1f1f1f;
+      --white: #f0f0f0;
+      --accent: #ff0077;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--deep-gray);
+      color: var(--white);
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: var(--blue-neon);
+    }
+
+    .subtitle {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      color: var(--accent);
+      margin-top: 0.5rem;
+    }
+
+    .menu-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--surface);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+    }
+
+    .course {
+      padding: 1.5rem;
+      border-bottom: 1px solid #333;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .course:hover {
+      background-color: rgba(0, 229, 255, 0.05);
+      transform: scale(1.01);
+    }
+
+    .course h2 {
+      font-size: 0.9rem;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .description {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+      .course {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>µCuisine</h1>
+    <div class="subtitle">Phase 7 | Experimental Edibles</div>
+  </header>
+  <main class="menu-container">
+    <section class="course">
+      <h2>0.1 — INITIALIZE</h2>
+      <div class="title">Checkerboard Sashimi Rose</div>
+      <div class="description">Biopolymer-bonded scallop + salmon lattice, uni matrix, chili oil coulis. Visual fusion algorithm activated.</div>
+    </section>
+    <section class="course">
+      <h2>0.2 — SIMULATED EARTH</h2>
+      <div class="title">Edible Mushroom Soil</div>
+      <div class="description">Dark chocolate curry substrate, root vegetable clusters, caramelized nodes. Crunch vs. loam simulation.</div>
+    </section>
+    <section class="course">
+      <h2>0.3 — DEFENSE MODE</h2>
+      <div class="title">Hedgehog Pork Belly</div>
+      <div class="description">Crisped pork belly fractals, Thai foam emission, herb mayo nanogel, chili pipette payload.</div>
+    </section>
+    <section class="course">
+      <h2>0.4 — OVERRIDE</h2>
+      <div class="title">Cynarin-Stuffed Chicken Roulade</div>
+      <div class="description">Taste-modulation payload: cheese, spinach, artichoke roll. Altering future perceptions.</div>
+    </section>
+    <section class="course">
+      <h2>0.5 — SWEETFEED PROTOCOL</h2>
+      <div class="title">Yuzu Beef Shigureni</div>
+      <div class="description">Bonito-cheese rice cradle, sweet-simmered beef stack, yuzu signal drizzle.</div>
+    </section>
+    <section class="course">
+      <h2>0.6 — NEURAL RESET</h2>
+      <div class="title">Quattro Cheese Carb Node</div>
+      <div class="description">Melted dairy network, pesto orb, chili aioli stripe. Stabilization achieved.</div>
+    </section>
+    <section class="course">
+      <h2>0.7 — FUSION FINALE</h2>
+      <div class="title">Eggform Coconut Sphere</div>
+      <div class="description">Coconut foam shell, mango-passion yolk sphere, sesame chip, toasted bread bits. Served with a tropical nanodrink.</div>
+    </section>
+  </main>
+</body>
+</html>

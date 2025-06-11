@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ichi-Go Ichi-E | µCuisine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&family=Crimson+Text&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sky-blue: #a2d6f9;
+      --deep-navy: #0a0e2a;
+      --metallic-gold: #e0b253;
+      --panel: rgba(10, 14, 42, 0.8);
+      --font-primary: 'Rajdhani', sans-serif;
+      --font-secondary: 'Crimson Text', serif;
+    }
+
+    * {
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      font-family: var(--font-secondary);
+      background: linear-gradient(to bottom, var(--deep-navy), #1a1f3d);
+      color: var(--sky-blue);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    h1 {
+      font-family: var(--font-primary);
+      font-size: 2.7rem;
+      color: var(--metallic-gold);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--sky-blue);
+      font-style: italic;
+    }
+
+    .menu {
+      max-width: 700px;
+      margin: 0 auto;
+      border-radius: 16px;
+      padding: 1rem 1.5rem;
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(162, 214, 249, 0.3);
+    }
+
+    .course {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--sky-blue);
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .course:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      font-family: var(--font-primary);
+      font-size: 0.8rem;
+      color: var(--metallic-gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--sky-blue);
+      margin-top: 0.25rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: #cde6f5;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ichi-Go Ichi-E</h1>
+    <div class="subtitle">µCuisine | A Singular Omakase of the Future</div>
+  </header>
+  <main class="menu" id="menu">
+    <div class="course">
+      <div class="label">Awakening</div>
+      <div class="title">Scallop-Salmon Rose Grid</div>
+      <div class="description">Precision-cut sashimi melded with enzyme, molded into a rose. Accented by uni quantum sauce and piquant chili oil.</div>
+    </div>
+    <div class="course">
+      <div class="label">Terra Uplink</div>
+      <div class="title">Chocolate Fungal Soil</div>
+      <div class="description">Spiced mushroom and cocoa earth with root vegetables and glazed pearl onion. A bite of hyper-naturality.</div>
+    </div>
+    <div class="course">
+      <div class="label">Kinetic Crunch</div>
+      <div class="title">Hedgehog Belly</div>
+      <div class="description">Pork belly in fractal fry with Thai foam and garlic-mayo gel. A neural thrill of texture and intensity.</div>
+    </div>
+    <div class="course">
+      <div class="label">Taste Calibration</div>
+      <div class="title">Artichoke Core Roulade</div>
+      <div class="description">Spinach-artichoke stuffed chicken with flavor-modulating properties. Prepares for sweet data input.</div>
+    </div>
+    <div class="course">
+      <div class="label">Sequence Drift</div>
+      <div class="title">Yuzu Shigureni Overlay</div>
+      <div class="description">Shaved beef over umami-encoded cheese rice. Spiced by yuzu OS patch.</div>
+    </div>
+    <div class="course">
+      <div class="label">Rebalance</div>
+      <div class="title">Quattro Cheese Protocol</div>
+      <div class="description">Cheesy bread with dip duality: chili aioli and green pesto. A carb sync phase.</div>
+    </div>
+    <div class="course">
+      <div class="label">Final Layer</div>
+      <div class="title">Egg Simulation Sphere</div>
+      <div class="description">Black sesame tuile with coconut espuma and passion-mango yolk. Served with toasted milk matrix and tropical cordial.</div>
+    </div>
+  </main>
+</body>
+</html>
